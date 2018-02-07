@@ -10,26 +10,40 @@ import UIKit
 
 class CreateGoalVC: UIViewController {
 
+    @IBOutlet weak var goalTextView: UITextView!
+    @IBOutlet weak var shortTemBtn: UIButton!
+    @IBOutlet weak var longTermBtn: UIButton!
+    @IBOutlet weak var nextBtn: UIButton!
+    
+    
+    var goalType : GoalType = .shortTerm
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        nextBtn.bindToKeyboard()
+        shortTemBtn.setSelectedColor()
+        longTermBtn.setDeselectedColor()
+        
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    @IBAction func longTermBtnWasPressed(_ sender: Any) {
+        goalType = .longTerm
+        shortTemBtn.setDeselectedColor()
+        longTermBtn.setSelectedColor()
     }
-    */
+    
+    @IBAction func shortTermBtnWasPressed(_ sender: Any) {
+        goalType = .shortTerm
+        shortTemBtn.setSelectedColor()
+        longTermBtn.setDeselectedColor()
+    
+    }
 
+    @IBAction func backBtnWasPressed(_ sender: Any) {
+        dismissDetail()
+    }
+    
+    @IBAction func nextBtnWasPressed(_ sender: Any) {
+        
+    }
 }
