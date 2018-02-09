@@ -17,7 +17,6 @@ class GoalsVC: UIViewController {
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
-        
         tableView.isHidden = false
         
     }

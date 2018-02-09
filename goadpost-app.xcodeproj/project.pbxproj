@@ -19,6 +19,7 @@
 		2B58A73E202B9337000C09AF /* UIViewControolerExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B58A73D202B9337000C09AF /* UIViewControolerExt.swift */; };
 		2B58A740202B97B5000C09AF /* UIViewExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B58A73F202B97B5000C09AF /* UIViewExt.swift */; };
 		2B58A742202B9BB1000C09AF /* UIButtonExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B58A741202B9BB1000C09AF /* UIButtonExt.swift */; };
+		2B58A744202D27E1000C09AF /* FinishGoalVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B58A743202D27E1000C09AF /* FinishGoalVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		2B58A73D202B9337000C09AF /* UIViewControolerExt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewControolerExt.swift; sourceTree = "<group>"; };
 		2B58A73F202B97B5000C09AF /* UIViewExt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewExt.swift; sourceTree = "<group>"; };
 		2B58A741202B9BB1000C09AF /* UIButtonExt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIButtonExt.swift; sourceTree = "<group>"; };
+		2B58A743202D27E1000C09AF /* FinishGoalVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FinishGoalVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +89,7 @@
 			children = (
 				2B58A720202B690B000C09AF /* GoalsVC.swift */,
 				2B58A73B202B9002000C09AF /* CreateGoalVC.swift */,
+				2B58A743202D27E1000C09AF /* FinishGoalVC.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -197,6 +200,7 @@
 				2B58A727202B690B000C09AF /* goadpost_app.xcdatamodeld in Sources */,
 				2B58A721202B690B000C09AF /* GoalsVC.swift in Sources */,
 				2B58A742202B9BB1000C09AF /* UIButtonExt.swift in Sources */,
+				2B58A744202D27E1000C09AF /* FinishGoalVC.swift in Sources */,
 				2B58A71F202B690B000C09AF /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
