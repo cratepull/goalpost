@@ -13,11 +13,30 @@ class GoalsVC: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
+    var goalsArray: [Goal] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
         tableView.isHidden = false
+        
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        self.fetch { (complete) in
+            if complete{
+                if goalsArray.count > 0{
+                    tableView.isHidden = false
+                }else{
+                    tableView.isHidden = true
+                }
+            }
+        }
+        
+        tableView.reloadData()
         
     }
     
@@ -37,7 +56,7 @@ extension GoalsVC: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        return goalsArray.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -47,10 +66,38 @@ extension GoalsVC: UITableViewDelegate, UITableViewDataSource {
                 return UITableViewCell()
         }
         
-        cell.configureCell(description: "Code every day", type: .longTerm, goalProgressAmount: 3)
+        let goal = goalsArray[indexPath.row]
+        
+        cell.configureCell(goal: goal )
         
         return cell
         
     }
 
 }
+
+
+
+
+extension GoalsVC{
+
+    func fetch(completion: (_ complete: Bool)->()){
+    
+        guard let managedContext = appDelegate?.persistentContainer.viewContext else {return}
+        
+        let fetchRequest = NSFetchRequest<Goal>(entityName: "Goal")
+        
+        do{
+            goalsArray = try  managedContext.fetch(fetchRequest)
+            print("successfully fetched data.")
+            completion(true)
+        }catch{
+            debugPrint("Could not fetch\(error)")
+            completion(true)
+            
+        }
+    }
+}
+
+
+
